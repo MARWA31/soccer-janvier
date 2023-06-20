@@ -1,0 +1,27 @@
+
+
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-9 mx-auto text-center">
+          <h1 class="text-white">{{name}}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form #chaineForm="ngForm" (ngSubmit)="occurence(ch)">
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]="ch" [ngModelOptions]="{standalone:true}" placeholder="chaine">
+    </div>
+    <div class="form-group">
+      <input type="submit" class="btn btn-primary py-3 px-5" value="occurence">
+    </div>
+  </form>
+  
+  <div *ngIf="resultArray.length > 0">
+    <h3>Résultat :</h3>
+    <div *ngFor="let item of resultArray">
+      Lettre: {{ item.lettre }}, Occurrence: {{ item.occurrence }}
+    </div>
+  </div>
+  
